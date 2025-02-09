@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Dashboard</h2>
+        <td><a href="/profile"><img src="/<%= user.profilePicture %>" class="profile-img"></a></td>
+        <h3>All Users</h3>
+        <table>
+            <tr>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><img src="/<%= user.profilePicture %>" class="profile-img"></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.role %></td>
+                </tr>
+            <% }) %>
+        </table>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

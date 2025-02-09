@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Profile</h2>
+        <img src="/<%= user.profilePicture %>" alt="Profile Picture" class="profile-img">
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <form action="/profile/update" method="POST">
+            <input type="text" name="name" value="<%= user.name %>" required>
+            <input type="email" name="email" value="<%= user.email %>" required>
+            <button type="submit" class="btn">Update Profile</button>
+        </form>
+        <form action="/profile/delete" method="POST">
+            <button type="submit" class="btn btn-danger">Delete Account</button>
+        </form>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
